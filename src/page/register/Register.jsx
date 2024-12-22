@@ -5,62 +5,76 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthContext";
 import toast from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-  // const [showPassword, setShowPassword]=useState(false)
+  const [showPassword, setShowPassword]=useState(false)
   const navigate = useNavigate();
   const location = useLocation();
-  const {createUser,setError,setUser}=useContext(AuthContext)
-  const handleSubmit = (e) => {
+  const {createUser,setError,setUser,handleGoogleLogin,error,updateUserProfile}=useContext(AuthContext)
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = e.target.name.value;
-    const image = e.target.photo.value;
-
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    console.log(name, email, password, image);
-    setError('')
-    if(password.length<6){
-      setError('password must contain at least six character  ')
-      toast.error('Password must contain at least six characters');
-      return
+    const name = form.name.value;
+    const image = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+  
+    setError(""); 
+    
+    if (password.length < 6) {
+      setError("Password must contain at least six characters");
+      toast.error("Password must contain at least six characters");
+      return;
     }
-    if(!/[a-z]/.test(password)){
-      setError('password must contain at least one lowercase ')
-      toast.error('password must contain at least one lowercase ');
-
-      return
+    if (!/[a-z]/.test(password)) {
+      setError("Password must contain at least one lowercase letter");
+      toast.error("Password must contain at least one lowercase letter");
+      return;
     }
-    if(!/[A-Z]/.test(password)){
-      setError('password must contain at least one uppercase ')
-      toast.error('password must contain at least one uppercase ')
-      return
+    if (!/[A-Z]/.test(password)) {
+      setError("Password must contain at least one uppercase letter");
+      toast.error("Password must contain at least one uppercase letter");
+      return;
     }
-    createUser(email,password)
-    .then((result)=>{
-      const user=result.user
-      console.log(user)
-      setUser(user)
-      toast.success('succesful')
-      // updateUserProfile({displayName:name, photoURL:image}).then(()=>{
-      //     toast.success('succesful')
-      //     setUser((prev)=>({...prev,displayName:name,photoURL:image}))
-      //   }).catch(err=>{
-      //     toast.error(err)
-      //   })
-     
-
-      form.reset()
+  
+    try {
+      const result = await createUser(email, password);
+      const user = result.user;
+  
+      await updateUserProfile({ displayName: name, photoURL: image })
+        .then(() => {
+          setUser({ ...user, displayName: name, photoURL: image });
+          toast.success("Registration successful!");
+        })
+        .catch((err) => {
+          toast.error("Failed to update profile: " + err.message);
+        });
+  
+      const redirectPath = location?.state?.from || "/";
+      toast.success("Redirecting to: " + redirectPath);
+      navigate(redirectPath);
+  
+      form.reset(); 
+    } catch (err) {
+      const errorCode = err.code;
+      const errorMessage = err.message;
+      setError(errorMessage);
+      toast.error(errorMessage);
+    }
+  };
+  const handleGoogleClick=()=>{
+    handleGoogleLogin()
+    .then((result) => {
+      const user = result.user;
+      setUser(user);
+  
       navigate(location?.state ? location.state :"/");
     })
-    .catch((error)=>{
-      const errorcode=error.code;
-      const errorMassage=error.message;
-      toast.error(error.message)
-      
-    })
-  };
+    .catch((err) => {
+      setError({ ...error, login:err.code });
+    });
+   }
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -113,31 +127,24 @@ const Register = () => {
               <label className="label">
                 <span className="label-text">Password</span>
                 {/* show pass system */}
-                {/* <button type='button' onClick={()=>setShowPassword(!showPassword)} className='absolute top-[360px] right-12 btn btn-xs'>
+                <button type='button' onClick={()=>setShowPassword(!showPassword)} className='absolute top-[360px] right-12 btn btn-xs'>
         {
           showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
         }
-       </button> */}
+       </button>
               </label>
+              <input type={showPassword ? 'text' : 'password'} name="password" placeholder="password" className="input input-bordered" required />
 
-              <input
-                type="password"
-                name="password"
-                placeholder="password"
-                className="input input-bordered"
-                required
-              />
-
-              {/* {
+              {
       error && <p className='text-red-500'>{error}</p>
-     } */}
+     }
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
                 </a>
               </label>
             </div>
-            <button className="btn">
+            <button onClick={handleGoogleClick} className="btn">
               <span>
                 <FcGoogle></FcGoogle>
               </span>
