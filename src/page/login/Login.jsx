@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import loginLottie from '../../assets/lottie/login.json'
 import toast from 'react-hot-toast';
 import AuthContext from '../../Context/AuthContext';
+import Lottie from 'lottie-react';
 
 const Login = () => {
     const {handleGoogleLogin,handleLogin,error,setError,setUser} = useContext(AuthContext)
@@ -43,6 +45,7 @@ const handleGoogleClick=()=>{
     return (
         <div>
  <div className="card bg-base-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl pt-8">
+        <div className='w-4/5 mx-auto'><Lottie animationData={loginLottie}></Lottie></div>
           <form onSubmit={handleSubmit} className="card-body">
           
             <div className="form-control">

@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "name": "Smartphone",
+      "image": "/images/smartphone.jpg",
+      "description": "A high-quality smartphone with advanced features.",
+      "price": 799
+    },
+    {
+      "id": 2,
+      "name": "Laptop",
+      "image": "/images/laptop.jpg",
+      "description": "A powerful laptop for professionals and gamers.",
+      "price": 1299
+    },
+    {
+      "id": 3,
+      "name": "Headphones",
+      "image": "/images/headphones.jpg",
+      "description": "Noise-cancelling headphones for immersive sound.",
+      "price": 199
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch",
+      "image": "/images/smartwatch.jpg",
+      "description": "A stylish smartwatch to keep track of your fitness.",
+      "price": 299
+    },
+    {
+      "id": 5,
+      "name": "Camera",
+      "image": "/images/camera.jpg",
+      "description": "Capture moments with this high-resolution camera.",
+      "price": 599
+    }
+  ]

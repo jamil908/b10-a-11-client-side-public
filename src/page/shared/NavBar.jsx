@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import AuthContext from '../../Context/AuthContext';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
-
+import  './nav.css'
 const NavBar = () => {
   const {user,handleLogOut}=useContext(AuthContext)
     const links=<>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+  
+        <NavLink className={'btn'} to='/'>Home</NavLink>
+        <NavLink className={'btn'} to='/myQueries'>MyQueries</NavLink>
         <div className=" md:hidden">
         {user && user?.email ? (
           <button
@@ -50,7 +51,7 @@ const NavBar = () => {
        {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">Next-Step-Guide</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

@@ -7,6 +7,8 @@ import Error from "../Error/Error";
 import Home from "../page/home/Home";
 import Register from "../page/register/Register";
 import Login from "../page/login/Login";
+import PrivateRoute from "../page/private/PrivateRoute";
+import MyQueries from "../page/myQueries/MyQueries";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -24,7 +26,11 @@ import Login from "../page/login/Login";
         {
           path:'/login',
           element:<Login></Login>
-        }
+        },
+        {
+          path:'/myQueries',
+          element:<PrivateRoute><MyQueries></MyQueries></PrivateRoute>,
+        },
       ]
     },
   ]);
