@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import AuthContext from '../../Context/AuthContext';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import  './nav.css'
+import AuthContext from '../../context/AuthContext';
 const NavBar = () => {
   const {user,handleLogOut}=useContext(AuthContext)
     const links=<>
