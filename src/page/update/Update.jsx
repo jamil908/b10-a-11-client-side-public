@@ -1,9 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Loading from '../loading/Loading';
+import AuthContext from '../../context/AuthContext';
 
 const Update = () => {
     const { id } = useParams();
+    const{user}=useContext(AuthContext)
     const navigate =useNavigate()
     const [query, setQuery] = useState(null);
     const [loadings,setLoading]=useState(true)
@@ -23,6 +26,9 @@ const Update = () => {
         fetchQueryDetails();
     }, [id]);
     console.log(query)
+    if(loadings){
+        return<Loading></Loading>
+    }
 
 
     const handleQueryUpdate =async e =>{
