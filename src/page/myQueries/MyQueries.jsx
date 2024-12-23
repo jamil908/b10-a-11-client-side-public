@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import axios from 'axios';
 import Loading from '../loading/Loading';
+import Swal from 'sweetalert2';
 
 const MyQueries = () => {
     const {user,loading}=useContext(AuthContext)
@@ -22,7 +23,38 @@ const MyQueries = () => {
 
         fetchQueries();
     }, []);
+    const handleDelete = async(id)=>{
+          Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+              }).then(async(result) => {
+                if (result.isConfirmed) {
+                    try {
+                        await axios.delete(`${import.meta.env.VITE_API_URL}/queryDelete/${id}`);
+                        setQueries(queries.filter((query) => query._id !== id));
+                        Swal.fire(
+                            'Deleted!',
+                            'Your query has been deleted.',
+                            'success'
+                        );
+                    } catch (error) {
+                        console.error('Error deleting query:', error);
+                        Swal.fire(
+                            'Error!',
+                            'Something went wrong while deleting the query.',
+                            'error'
+                        );
+                    }
+                }
+            });
+        };
 
+    
     return (
         
         <div className="min-h-[calc(100vh-120px)] px-6 py-4">

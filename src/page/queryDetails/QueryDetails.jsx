@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loading from '../loading/Loading';
 
 const QueryDetails = () => {
     const { id } = useParams(); // Get the query ID from the URL
     const [query, setQuery] = useState(null);
-
+    const [loadings,setLoading]=useState(true)
+    const {loading}=useState()
     useEffect(() => {
         const fetchQueryDetails = async () => {
             try {
@@ -13,17 +15,24 @@ const QueryDetails = () => {
                 setQuery(response.data); 
             } catch (error) {
                 console.error('Error fetching query details:', error);
-            } 
+            }  finally {
+                setLoading(false); // Set loading to false
+            }
         };
 
         fetchQueryDetails();
     }, [id]);
+    if(loadings){
+        return <Loading></Loading>
+    }
     console.log(query)
+
    
     
     return (
+        <>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 min-h-screen">
+{loading ? <Loading></Loading>:  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 min-h-screen">
         <div key={query._id} className="bg-white shadow-md rounded-lg p-4">
             <img
                 src={query.productImage}
@@ -55,7 +64,9 @@ const QueryDetails = () => {
             </p>
         </div>
         
-    </div>
+    </div>}
+      
+    </>
     );
 };
 
