@@ -23,6 +23,8 @@ const MyQueries = () => {
 
         fetchQueries();
     }, []);
+
+    // delete data 
     const handleDelete = async(id)=>{
           Swal.fire({
                 title: "Are you sure?",
@@ -53,6 +55,11 @@ const MyQueries = () => {
                 }
             });
         };
+
+        // update data
+        const handleUpdate = async(id)=>{
+
+        }
 
     
     return (
@@ -87,12 +94,12 @@ const MyQueries = () => {
                         </button>
                     </Link>
                        
-                        <button
+                      <Link to={`/update/${item._id}`}>  <button
                             className="btn bg-yellow-400 text-white px-4 py-2 rounded-md hover:bg-yellow-500"
-                            onClick={() => handleUpdate(item._id)}
+    
                         >
                             Update
-                        </button>
+                        </button></Link>
                         <button
                             className="btn bg-red-400 text-white px-4 py-2 rounded-md hover:bg-red-500"
                             onClick={() => handleDelete(item._id)}
