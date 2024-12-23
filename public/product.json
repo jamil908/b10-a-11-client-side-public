@@ -2,28 +2,28 @@
     {
       "id": 1,
       "name": "Smartphone",
-      "image": "/images/smartphone.jpg",
+      "image": "https://i.ibb.co.com/jywY84j/th-1.jpg",
       "description": "A high-quality smartphone with advanced features.",
       "price": 799
     },
     {
       "id": 2,
       "name": "Laptop",
-      "image": "/images/laptop.jpg",
+      "image":"https://i.ibb.co.com/x7rZyQD/th-5.jpg",
       "description": "A powerful laptop for professionals and gamers.",
       "price": 1299
     },
     {
       "id": 3,
       "name": "Headphones",
-      "image": "/images/headphones.jpg",
+      "image": "https://i.ibb.co.com/sgLYVtH/th-4.jpg",
       "description": "Noise-cancelling headphones for immersive sound.",
       "price": 199
     },
     {
       "id": 4,
-      "name": "Smartwatch",
-      "image": "/images/smartwatch.jpg",
+      "name": "Air pods ",
+      "image": "https://i.ibb.co.com/gVCmLJz/th-8.jpg",
       "description": "A stylish smartwatch to keep track of your fitness.",
       "price": 299
     },

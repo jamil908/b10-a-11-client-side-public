@@ -10,7 +10,7 @@ const MyQueries = () => {
         const fetchQueries = async () => {
             try {
                 const email = `${user.email}`;
-                const response = await axios.get(`${import.meta.env.VITE_API_URL}/queries?email=${email}`);
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/emailQueries?email=${email}`);
                 setQueries(response.data); 
             } catch (error) {
                 console.error('Error fetching queries:', error);
