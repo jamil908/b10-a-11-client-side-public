@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from './Slider';
+import AllQuery from '../allQuery/AllQuery';
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
                 this is home
             </h2>
             <Slider></Slider>
+            <AllQuery></AllQuery>
         </div>
     );
 };

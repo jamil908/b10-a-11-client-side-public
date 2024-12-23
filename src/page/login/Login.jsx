@@ -3,8 +3,8 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginLottie from '../../assets/lottie/login.json'
 import toast from 'react-hot-toast';
-import AuthContext from '../../Context/AuthContext';
 import Lottie from 'lottie-react';
+import AuthContext from '../../context/AuthContext';
 
 const Login = () => {
     const {handleGoogleLogin,handleLogin,error,setError,setUser} = useContext(AuthContext)
