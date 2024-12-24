@@ -64,55 +64,160 @@ const MyQueries = () => {
     
     return (
         
-        <div className="min-h-[calc(100vh-120px)] px-6 py-4">
-        <div className="flex justify-between items-center mb-6">
-            <h2 className="text-3xl font-bold">My Queries</h2>
-            <Link to="/addQueries">
-                <button className="btn bg-green-400 text-white font-bold text-lg px-6 py-2 rounded-md shadow-md hover:bg-green-500">
-                    Add Query
-                </button>
-            </Link>
-        </div>
-        {
-            loading?<Loading></Loading>:<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {queries.map((item) => (
-                <div key={item._id} className="bg-white rounded-lg shadow-md p-4 border">
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                        {item.productName}
-                    </h3>
-                    <p className="text-gray-600 mb-2">{item.queryTitle}</p>
-                    <p className="text-gray-500 mb-4">
-                        <strong>Recommendations:</strong> {item.recommendationCount}
-                    </p>
-                    <div className="flex justify-between items-center">
-                    <Link to={`/queryDetails/${item._id}`}>
-                    <button
-                            className="btn bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-500"
+    //     <div className="min-h-[calc(100vh-120px)] px-6 py-4">
+    //         <div className="relative bg-cover bg-center  min-h-[calc(100vh-320px)] flex items-center justify-center" 
+    //      style={{ backgroundImage: "url('https://i.ibb.co.com/9GHWkST/a646b740-b000-46a9-a453-3d0c0de2da82.webp')" }}>
+   
+    //   <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+    //   <div className="relative z-10 text-center max-w-3xl p-8 bg-white bg-opacity-10 backdrop-blur-md rounded-lg shadow-2xl">
+    //     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+    //       Welcome to Query Manager
+    //     </h1>
+    //     <p className="text-lg md:text-xl text-gray-200 mb-8">
+    //       Manage your queries efficiently and get insights faster. Start now!
+    //     </p>
+    //     <Link to="/addQueries">
+    //     <button
+    //       className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-500 shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+    //     >
+    //       Add Queries
+    //     </button>
+    //         </Link>
+   
+    //   </div>
+    // </div>
+
+
+
+
+
+      
+    //     {
+    //         loading ?
+    //         <Loading></Loading>:
+    //         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    //         {queries.map((item) => (
+    //             <div key={item._id} className="bg-white rounded-lg shadow-md p-4 border">
+    //                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
+    //                     {item.productName}
+    //                 </h3>
+    //                 <p className="text-gray-600 mb-2">{item.queryTitle}</p>
+    //                 <p className="text-gray-500 mb-4">
+    //                     <strong>Recommendations:</strong> {item.recommendationCount}
+    //                 </p>
+    //                 <div className="flex justify-between items-center">
+    //                 <Link to={`/queryDetails/${item._id}`}>
+    //                 <button
+    //                         className="btn bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-500"
                           
-                        >
-                            View
-                        </button>
-                    </Link>
+    //                     >
+    //                         View
+    //                     </button>
+    //                 </Link>
                        
-                      <Link to={`/update/${item._id}`}>  <button
-                            className="btn bg-yellow-400 text-white px-4 py-2 rounded-md hover:bg-yellow-500"
+    //                   <Link to={`/update/${item._id}`}>  <button
+    //                         className="btn bg-yellow-400 text-white px-4 py-2 rounded-md hover:bg-yellow-500"
     
-                        >
-                            Update
-                        </button></Link>
-                        <button
-                            className="btn bg-red-400 text-white px-4 py-2 rounded-md hover:bg-red-500"
-                            onClick={() => handleDelete(item._id)}
-                        >
-                            Delete
-                        </button>
-                    </div>
-                </div>
-            ))}
-        </div>
-        }
+    //                     >
+    //                         Update
+    //                     </button></Link>
+    //                     <button
+    //                         className="btn bg-red-400 text-white px-4 py-2 rounded-md hover:bg-red-500"
+    //                         onClick={() => handleDelete(item._id)}
+    //                     >
+    //                         Delete
+    //                     </button>
+    //                 </div>
+    //             </div>
+    //         ))}
+    //     </div>
+    //     }
         
+    // </div>
+
+
+    <div className="min-h-[calc(100vh-120px)] px-6 py-4">
+    {/* Banner Section */}
+    <div
+      className="relative bg-cover bg-center min-h-[calc(100vh-320px)] flex items-center justify-center"
+      style={{
+        backgroundImage:
+          "url('https://i.ibb.co/9GHWkST/a646b740-b000-46a9-a453-3d0c0de2da82.webp')",
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="relative z-10 text-center max-w-3xl p-8 bg-white bg-opacity-10 backdrop-blur-md rounded-lg shadow-2xl">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          Welcome to Query Manager
+        </h1>
+        <p className="text-lg md:text-xl text-gray-200 mb-8">
+          Manage your queries efficiently and get insights faster. Start now!
+        </p>
+        <Link to="/addQueries">
+          <button className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-full hover:bg-blue-500 shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            Add Queries
+          </button>
+        </Link>
+      </div>
     </div>
+
+    {/* Loading State */}
+    {loading ? (
+      <Loading />
+    ) : queries.length === 0 ? (
+      // No Queries Found Message
+      <div className="flex flex-col items-center justify-center py-16">
+        <h2 className="text-3xl font-bold text-gray-700 mb-4">
+          No Queries Found
+        </h2>
+        <p className="text-lg text-gray-600 mb-6">
+          You don't have any queries yet. Start by adding a new query.
+        </p>
+        <Link to="/addQueries">
+          <button className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-md hover:bg-blue-500 shadow-lg transition-transform transform hover:scale-105">
+            Add Query
+          </button>
+        </Link>
+      </div>
+    ) : (
+      // Render Queries
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {queries.map((item) => (
+          <div
+            key={item._id}
+            className="bg-white rounded-lg shadow-md p-4 border"
+          >
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              {item.productName}
+            </h3>
+            <p className="text-gray-600 mb-2">{item.queryTitle}</p>
+            <p className="text-gray-500 mb-4">
+              <strong>Recommendations:</strong> {item.recommendationCount}
+            </p>
+            <div className="flex justify-between items-center">
+              <Link to={`/queryDetails/${item._id}`}>
+                <button className="btn bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-500">
+                  View
+                </button>
+              </Link>
+              <Link to={`/update/${item._id}`}>
+                <button className="btn bg-yellow-400 text-white px-4 py-2 rounded-md hover:bg-yellow-500">
+                  Update
+                </button>
+              </Link>
+              <button
+                className="btn bg-red-400 text-white px-4 py-2 rounded-md hover:bg-red-500"
+                onClick={() => handleDelete(item._id)}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
     );
 };
 

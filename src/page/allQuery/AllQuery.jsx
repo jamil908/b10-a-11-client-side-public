@@ -18,9 +18,7 @@ const AllQuery = () => {
     };
     fetchQueries();
   }, []);
-  const handleViewDetails = (id) => {
-    console.log("Viewing details for ID:", id);
-  };
+  
   const recentQuery = queries.slice(-6)
   return (
     <div className="query-card">
@@ -31,15 +29,11 @@ const AllQuery = () => {
           <p>Recommendations: {item.recommendationCount}</p>
           <div className=" w-8">
             {" "}
-            <Link to={item._id}>
-              {" "}
-              <button
-                className="btn"
-                onClick={() => handleViewDetails(item._id)}
-              >
-                View Details
-              </button>
-            </Link>
+           <Link to={`/queryDetails/${item._id}`}>
+                           <button className="btn bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-500">
+                             View
+                           </button>
+                         </Link>
           </div>
         </div>
       ))}

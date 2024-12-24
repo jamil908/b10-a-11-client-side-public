@@ -12,6 +12,7 @@ import MyQueries from "../page/myQueries/MyQueries";
 import AddQuery from "../page/AddQuery/AddQuery";
 import QueryDetails from "../page/queryDetails/QueryDetails";
 import Update from "../page/update/Update";
+import Queries from "../page/allQuery/Queries";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -29,6 +30,10 @@ import Update from "../page/update/Update";
         {
           path:'/login',
           element:<Login></Login>
+        },
+        {
+          path:'/queries',
+          element:<Queries></Queries>,
         },
         {
           path:'/myQueries',
