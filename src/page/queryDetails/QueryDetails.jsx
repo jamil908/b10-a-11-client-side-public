@@ -1,10 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from '../loading/Loading';
+import AuthContext from '../../context/AuthContext';
 
 const QueryDetails = () => {
     const { id } = useParams(); // Get the query ID from the URL
+    const {user}=useContext(AuthContext)
     const [query, setQuery] = useState(null);
     const [loadings,setLoading]=useState(true)
     const {loading}=useState()
@@ -27,8 +29,27 @@ const QueryDetails = () => {
     }
     console.log(query)
 
-   
-    
+   const handleSubmit =async e =>{
+    e.preventDefault();
+
+    const formData = new FormData(e.target)
+    const initialData = Object.fromEntries(formData.entries());
+    console.log(initialData)
+    const queryData = {
+      ...initialData,
+      queryId: query._id,
+      queryTitle: query.queryTitle,
+      productName: query.productName,
+      queryEmail:query.email,
+      queryName:query.name,
+      recommendUserEmail:user?.email,
+      recommendUserName:user?.displayName,
+      timestamp: new Date().toISOString(),
+    }
+    const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/addRecommend`,queryData)
+    console.log(queryData)
+
+   }
     return (
         <>
 
@@ -62,6 +83,70 @@ const QueryDetails = () => {
                 <span className="font-semibold">Timestamp:</span>{' '}
                 {new Date(query.timestamp).toLocaleString()}
             </p>
+        </div>
+        <div>
+        {/* recommendation form */}
+        <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-lg p-6">
+      <h2 className="text-xl font-bold mb-4">Add a Recommendation</h2>
+
+      <div className="mb-4">
+        <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+          Recommendation Title
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="recommendTitle"
+          required
+          className="mt-1 p-2 block w-full border rounded-md"
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="productName" className="block text-sm font-medium text-gray-700">
+          Recommended Product Name
+        </label>
+        <input
+          type="text"
+          id="productName"
+          name="recommendProduct"
+          required
+          className="mt-1 p-2 block w-full border rounded-md"
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="productImage" className="block text-sm font-medium text-gray-700">
+          Recommended Product Image URL
+        </label>
+        <input
+          type="url"
+          id="productImage"
+          name="recommendImage"
+          required
+          className="mt-1 p-2 block w-full border rounded-md"
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="reason" className="block text-sm font-medium text-gray-700">
+          Recommendation Reason
+        </label>
+        <textarea
+          id="reason"
+          name="recommendReason"
+          required
+          className="mt-1 p-2 block w-full border rounded-md"
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+      >
+        Add Recommendation
+      </button>
+    </form>
         </div>
         
     </div>}
