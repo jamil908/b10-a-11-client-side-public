@@ -90,8 +90,9 @@ const QueryDetails = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 min-h-screen">
-      <div className="bg-white shadow-md rounded-lg p-4">
+    <>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 ">
+      <div className="bg-white h-fit shadow-md rounded-lg p-4">
         <img
           src={query.productImage}
           alt={query.productName}
@@ -204,10 +205,13 @@ const QueryDetails = () => {
         </form>
       </div>
 
-      <div className="col-span-full mt-6">
+     
+    </div>
+    <div className=" bg-gray-100  ">
+    <div className=" pt-5">
         <h2 className="text-2xl font-bold mb-4">Recommendations</h2>
         {recommendations.length > 0 ? (
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-5 gap-4">
             {recommendations.map((recommendation) => (
               <div
                 key={recommendation._id}
@@ -243,6 +247,7 @@ const QueryDetails = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
