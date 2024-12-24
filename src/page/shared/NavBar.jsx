@@ -9,6 +9,7 @@ const NavBar = () => {
   
         <NavLink className={'btn'} to='/'>Home</NavLink>
         <NavLink className={'btn'} to='/myQueries'>MyQueries</NavLink>
+        <NavLink className={'btn'} to='/my-recommends'>MyRecommends</NavLink>
         <NavLink className={'btn'} to='/queries'>Queries</NavLink>
         <div className=" md:hidden">
         {user && user?.email ? (

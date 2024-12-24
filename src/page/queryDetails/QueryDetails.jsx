@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../loading/Loading";
 import AuthContext from "../../context/AuthContext";
+import Swal from "sweetalert2";
 
 const QueryDetails = () => {
   const { id } = useParams(); 
@@ -66,8 +67,16 @@ const QueryDetails = () => {
       );
       setRecommendations((prevRecommendations) => [
         ...prevRecommendations,
-        { _id: response.data._id, ...queryData }, 
+        { _id: response.data._id, ...queryData },
+        
     ]);
+    Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Your recommend has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
 
   
     e.target.reset();
