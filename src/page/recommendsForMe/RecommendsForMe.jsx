@@ -33,35 +33,38 @@ const RecommendsForMe = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">Recommends for me</h1>
-
-      {recommendations.length > 0 ? (
+    <h1 className="text-2xl font-bold mb-4 text-center">Recommends for Me</h1>
+  
+    {recommendations.length > 0 ? (
+      <div className="overflow-x-auto">
         <table className="w-full border-collapse bg-white shadow-lg">
           <thead>
-            <tr>
-              <th className="border px-4 py-2">Query Title</th>
-              <th className="border px-4 py-2">Recommendation Title</th>
-              <th className="border px-4 py-2">Reason</th>
-              <th className="border px-4 py-2">Submitted On</th>
+            <tr className="bg-gray-200">
+              <th className="border px-4 py-2 text-sm md:text-base">Query Title</th>
+              <th className="border px-4 py-2 text-sm md:text-base">Recommendation Title</th>
+              <th className="border px-4 py-2 text-sm md:text-base">Reason</th>
+              <th className="border px-4 py-2 text-sm md:text-base">Submitted On</th>
             </tr>
           </thead>
           <tbody>
             {recommendations.map((rec) => (
-              <tr key={rec._id}>
-                <td className="border px-4 py-2">{rec.queryTitle}</td>
-                <td className="border px-4 py-2">{rec.recommendTitle}</td>
-                <td className="border px-4 py-2">{rec.recommendReason}</td>
-                <td className="border px-4 py-2">
+              <tr key={rec._id} className="hover:bg-gray-100">
+                <td className="border px-4 py-2 text-sm md:text-base">{rec.queryTitle}</td>
+                <td className="border px-4 py-2 text-sm md:text-base">{rec.recommendTitle}</td>
+                <td className="border px-4 py-2 text-sm md:text-base">{rec.recommendReason}</td>
+                <td className="border px-4 py-2 text-sm md:text-base">
                   {new Date(rec.timestamp).toLocaleString()}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-      ) : (
-        <p>There is no recommends for you</p>
-      )}
-    </div>
+      </div>
+    ) : (
+      <p className="text-center text-gray-600 mt-6">There are no recommendations for you.</p>
+    )}
+  </div>
+  
   );
 
 };

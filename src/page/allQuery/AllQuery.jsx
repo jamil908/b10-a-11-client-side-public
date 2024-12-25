@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import '../shared/nav.css'
 const AllQuery = () => {
   const [queries, setQueries] = useState([]);
 
@@ -22,8 +22,8 @@ const AllQuery = () => {
   const recentQuery = queries.slice(-6);
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <h2 className="text-3xl font-bold text-center mb-6 text-gray-700">
+    <div className="container mx-auto bg-c px-4 py-6">
+      <h2 className="text-3xl font-bold text-center mb-6 text-white">
         Recent Queries
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

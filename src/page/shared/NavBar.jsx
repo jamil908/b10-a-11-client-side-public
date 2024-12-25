@@ -47,8 +47,8 @@ const NavBar = () => {
         </div>
 
         {/* Mobile Menu Dropdown */}
-        <div className="lg:hidden flex items-center">
-          <div className="dropdown">
+        <div className="lg:hidden flex items-start">
+          <div className="dropdown dropdown-left">
             <div tabIndex={0} role="button" className="btn btn-ghost text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

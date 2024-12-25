@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import '../shared/nav.css'
 import { Pagination, Navigation, Autoplay } from "swiper/modules"; // Import Autoplay module
 
 const Slider = () => {
@@ -19,7 +20,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="p-5 bg-gradient-to-b from-blue-50 via-white to-blue-50">
+    <div className="p-5 bg-d bg-gradient-to-b from-blue-50 via-white to-blue-50">
       <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-700">
         Recommended Products
       </h2>

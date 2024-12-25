@@ -2,3 +2,24 @@
     background-color: darkmagenta;
     color: aliceblue;
 }
+
+.bg-c{
+    background: rgb(27,13,77);
+    background: linear-gradient(0deg, rgba(27,13,77,1) 19%, rgba(44,18,77,1) 57%, rgba(10,8,42,1) 87%);
+}
+.bg-d{
+    background: rgb(27,13,77);
+    background: linear-gradient(0deg, rgba(27,13,77,1) 19%, rgba(44,18,77,1) 57%, rgba(10,8,42,1) 87%);
+}
+.bg-e{
+    background: rgb(67,12,54);
+background: linear-gradient(0deg, rgba(67,12,54,1) 19%, rgba(17,37,75,1) 92%);
+}
+.bg-f{
+    background: rgb(67,12,54);
+background: linear-gradient(180deg, rgba(67,12,54,1) 19%, rgba(27,13,77,1) 92%);
+}
+.bg-g{
+    background: rgb(27,13,77);
+background: linear-gradient(180deg, rgba(27,13,77,1) 19%, rgba(18,46,77,1) 64%, rgba(21,94,111,1) 92%);
+}

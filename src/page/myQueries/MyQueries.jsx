@@ -5,6 +5,7 @@ import axios from 'axios';
 import Loading from '../loading/Loading';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../useAxiosSecure';
+import '../shared/nav.css'
 
 const MyQueries = () => {
     const {user,loading}=useContext(AuthContext)
@@ -143,7 +144,7 @@ const MyQueries = () => {
     // </div>
 
 
-    <div className="min-h-[calc(100vh-120px)] px-6 py-4">
+    <div className="min-h-[calc(100vh-120px)] bg-d px-6 py-4">
     {/* Banner Section */}
     <div
       className="relative bg-cover bg-center min-h-[calc(100vh-320px)] flex items-center justify-center"
