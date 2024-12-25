@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Loading from '../loading/Loading';
-import AuthContext from '../../context/AuthContext';
 import axios from 'axios';
+import AuthContext from '../../Context/AuthContext';
 
 const RecommendsForMe = () => {
     const { user } = useContext(AuthContext); 

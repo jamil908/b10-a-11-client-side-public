@@ -37,9 +37,19 @@ const AuthProvider = ({children}) => {
             const user ={email:currentUser.email}
             axios.post(` ${import.meta.env.VITE_API_URL}/jwt`,user,{
               withCredentials:true})
-            .then(res=>console.log(res.data))
+            .then(res=>{
+              console.log(res.data)
+              setLoading(false);
+          })
           }
-          setLoading(false);
+          else{
+              axios.post(` ${import.meta.env.VITE_API_URL}/logout`,{},{
+                withCredentials:true})
+                .then(res=>{
+                  console.log('logout',res.data)
+                  setLoading(false);
+                })
+          }
           return () => {
             unsubscribe();
           };
