@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import './nav.css';
 import AuthContext from '../../context/AuthContext';
-
+import '../shared/nav.css'
 const NavBar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
 
@@ -19,7 +19,7 @@ const NavBar = () => {
   );
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 shadow-lg">
+    <div className="bg-gradient-to-r bg-n shadow-lg">
       <div className="navbar container mx-auto px-5 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">

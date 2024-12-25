@@ -2,7 +2,11 @@
     background-color: darkmagenta;
     color: aliceblue;
 }
+.bg-n{
+    background: rgb(10,8,42);
+background: linear-gradient(86deg, rgba(10,8,42,1) 8%, rgba(19,11,60,1) 17%, rgba(36,27,96,1) 65%, rgba(18,48,77,1) 100%, rgba(17,63,69,1) 100%);
 
+}
 .bg-c{
     background: rgb(27,13,77);
     background: linear-gradient(0deg, rgba(27,13,77,1) 19%, rgba(44,18,77,1) 57%, rgba(10,8,42,1) 87%);

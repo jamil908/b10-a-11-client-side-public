@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "../shared/nav.css";
 import { Link } from "react-router-dom";
-import '../shared/nav.css'
 const AllQuery = () => {
   const [queries, setQueries] = useState([]);
 
@@ -19,8 +19,8 @@ const AllQuery = () => {
     fetchQueries();
   }, []);
 
-  const recentQuery = queries.slice(-6);
-
+  const recentQuery = queries.slice(0, 6);
+  console.log(recentQuery);
   return (
     <div className="container mx-auto bg-c px-4 py-6">
       <h2 className="text-3xl font-bold text-center mb-6 text-white">

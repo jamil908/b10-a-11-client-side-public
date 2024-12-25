@@ -4,22 +4,35 @@ import axios from 'axios';
 
 const AddQuery = () => {
   const {user}=useContext(AuthContext)
-    const handleQueryAdd =async e =>{
-        e.preventDefault();
-        const formData = new FormData(e.target)
-        const initialData = Object.fromEntries(formData.entries());
-        console.log(initialData)
-        const queryData = {
-          ...initialData,
-          email:user?.email,
-          name:user?.displayName,
-          photo:user?.photoURL,
-          timestamp: new Date().toISOString(),
-          recommendationCount: 0,
-        }
-        const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/addQuery`,queryData)
-        console.log(data)
+  const handleQueryAdd = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const initialData = Object.fromEntries(formData.entries());
+    const queryData = {
+      ...initialData,
+      email: user?.email,
+      name: user?.displayName,
+      photo: user?.photoURL,
+      timestamp: new Date().toISOString(),
+      recommendationCount: 0,
+    };
+  
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/addQuery`,
+        queryData
+      );
+  
+      console.log(data);
+      e.target.reset(); 
+  
+      
+     
+    } catch (error) {
+      console.error("Error adding query:", error);
     }
+  };
+  
     return (
         <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
   <h2 class="text-2xl font-bold text-center mb-6">Add Query</h2>
