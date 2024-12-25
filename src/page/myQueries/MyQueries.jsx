@@ -4,17 +4,23 @@ import AuthContext from '../../context/AuthContext';
 import axios from 'axios';
 import Loading from '../loading/Loading';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../useAxiosSecure';
 
 const MyQueries = () => {
     const {user,loading}=useContext(AuthContext)
 
     
     const [queries, setQueries] = useState([]);
+   
+    const axiosSecure=useAxiosSecure();
+    
     useEffect(() => {
         const fetchQueries = async () => {
             try {
                 const email = `${user.email}`;
-                const response = await axios.get(`${import.meta.env.VITE_API_URL}/emailQueries?email=${email}`);
+                const response = await axiosSecure.get(`/emailQueries?email=${email}`,{
+                  withCredentials:true
+                });
                 setQueries(response.data); 
             } catch (error) {
                 console.error('Error fetching queries:', error);

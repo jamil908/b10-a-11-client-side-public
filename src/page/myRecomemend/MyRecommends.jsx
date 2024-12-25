@@ -3,19 +3,23 @@ import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 import Loading from "../loading/Loading";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../useAxiosSecure";
 
 const MyRecommends = () => {
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true); 
+  const axiosSecure = useAxiosSecure()
 console.log(recommendations)
   useEffect(() => {
     if (user?.email) {
       const fetchRecommendations = async () => {
         try {
           
-          const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/recommendations/userEmail/${user.email}`
+          const response = await axiosSecure.get(
+            `/recommendations/userEmail/${user.email}`,{
+              withCredentials:true
+            }
           );
           setRecommendations(response.data); 
         } catch (error) {

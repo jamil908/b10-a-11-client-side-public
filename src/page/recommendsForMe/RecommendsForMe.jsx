@@ -2,17 +2,19 @@ import React, { useContext, useEffect, useState } from 'react';
 import Loading from '../loading/Loading';
 import axios from 'axios';
 import AuthContext from '../../Context/AuthContext';
+import useAxiosSecure from '../../useAxiosSecure';
 
 const RecommendsForMe = () => {
     const { user } = useContext(AuthContext); 
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
+  const axiosSecure = useAxiosSecure()
 
   useEffect(() => {
     const fetchRecommendations = async () => {
       try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/user/recommendations/${user.email}`
+        const response = await axiosSecure.get(
+          `/user/recommendations/${user.email}`
         );
         setRecommendations(response.data.recommendations); 
       } catch (error) {
