@@ -3,7 +3,7 @@ import Loading from '../loading/Loading';
 import axios from 'axios';
 import AuthContext from '../../Context/AuthContext';
 import useAxiosSecure from '../../useAxiosSecure';
-
+import '../shared/nav.css'
 const RecommendsForMe = () => {
     const { user } = useContext(AuthContext); 
   const [recommendations, setRecommendations] = useState([]);
@@ -32,8 +32,8 @@ const RecommendsForMe = () => {
   }
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-    <h1 className="text-2xl font-bold mb-4 text-center">Recommends for Me</h1>
+    <div className="p-6 bg-gray-100 min-h-screen bg-d">
+    <h1 className="text-2xl font-bold mb-4 text-center text-gray-100">Recommends for Me</h1>
   
     {recommendations.length > 0 ? (
       <div className="overflow-x-auto">

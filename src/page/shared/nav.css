@@ -27,3 +27,6 @@ background: linear-gradient(180deg, rgba(67,12,54,1) 19%, rgba(27,13,77,1) 92%);
     background: rgb(27,13,77);
 background: linear-gradient(180deg, rgba(27,13,77,1) 19%, rgba(18,46,77,1) 64%, rgba(21,94,111,1) 92%);
 }
+.bg-h{
+    background: rgb(10,8,42);
+background: linear-gradient(180deg, rgba(10,8,42,1) 5%, rgba(40,13,54,1) 41%, rgba(40,13,54,1) 55%, rgba(33,17,69,1) 100%);}

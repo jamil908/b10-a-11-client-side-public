@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Loading from "../loading/Loading";
 import AuthContext from "../../context/AuthContext";
 import Swal from "sweetalert2";
-
+import '../shared/nav.css'
 const QueryDetails = () => {
   const { id } = useParams(); 
   const { user } = useContext(AuthContext);
@@ -91,7 +91,8 @@ const QueryDetails = () => {
 
   return (
     <>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 ">
+ <div className="bg-d">
+ <div className="grid grid-cols-1 bg-d sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 ">
       <div className="bg-white h-fit shadow-md rounded-lg p-4">
         <img
           src={query.productImage}
@@ -207,9 +208,9 @@ const QueryDetails = () => {
 
      
     </div>
-    <div className=" bg-gray-100  ">
+    <div className=" text-gray-50 ">
     <div className=" pt-5">
-        <h2 className="text-2xl font-bold mb-4">Recommendations</h2>
+        <h2 className="text-2xl font-bold text-gray-100 mb-4">Recommendations</h2>
         {recommendations.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 py-5 gap-4">
             {recommendations.map((recommendation) => (
@@ -247,6 +248,7 @@ const QueryDetails = () => {
         )}
       </div>
     </div>
+ </div>
     </>
   );
 };

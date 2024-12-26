@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddQuery = () => {
   const {user}=useContext(AuthContext)
@@ -22,8 +23,13 @@ const AddQuery = () => {
         `${import.meta.env.VITE_API_URL}/addQuery`,
         queryData
       );
-  
-      console.log(data);
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: "Your query has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
       e.target.reset(); 
   
       

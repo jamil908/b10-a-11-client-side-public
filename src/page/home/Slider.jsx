@@ -21,9 +21,12 @@ const Slider = () => {
 
   return (
     <div className="p-5 bg-d bg-gradient-to-b from-blue-50 via-white to-blue-50">
-      <h2 className="text-4xl font-extrabold text-center mb-10 text-blue-700">
+      <h2 className="text-4xl font-extrabold text-center mb-3 text-blue-700">
         Recommended Products
       </h2>
+      <p className=" text-2xl  w-fit mx-auto mb-2 md:mb-5  font-bold text-blue-400">
+      "Next Step Guide: Discover, Recommend, and Elevate Your Choices!"
+      </p>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}

@@ -30,7 +30,7 @@
     {
       "id": 5,
       "name": "Camera",
-      "image": "/images/camera.jpg",
+      "image": "https://i.ibb.co.com/ZzGLdMn/th.jpg",
       "description": "Capture moments with this high-resolution camera.",
       "price": 599
     }

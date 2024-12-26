@@ -10,7 +10,6 @@ const MyRecommends = () => {
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(true); 
   const axiosSecure = useAxiosSecure()
-console.log(recommendations)
   useEffect(() => {
     if (user?.email) {
       const fetchRecommendations = async () => {
