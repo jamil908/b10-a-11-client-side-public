@@ -10,7 +10,7 @@ import { Fade, Zoom } from 'react-awesome-reveal';
 
 const MyQueries = () => {
     const {user,loading}=useContext(AuthContext)
-
+const [gridCols, setGridCols] = useState("grid-cols-1"); 
     
     const [queries, setQueries] = useState([]);
    
@@ -114,7 +114,40 @@ const MyQueries = () => {
       </div>
     ) : (
       // Render Queries
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 lg:gap-6">
+    <div>
+    <div className='flex gap-3 p-8 mx-auto w-fit'>
+    <button
+          onClick={() => setGridCols("grid-cols-1")}
+          className={`px-4 py-2 rounded-md ${
+            gridCols === "grid-cols-1"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-700"
+          }`}
+        >
+          1 Columns
+        </button>
+    <button
+          onClick={() => setGridCols("grid-cols-2")}
+          className={`px-4 py-2 rounded-md ${
+            gridCols === "grid-cols-2"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-700"
+          }`}
+        >
+          2 Columns
+        </button>
+    <button
+          onClick={() => setGridCols("grid-cols-3")}
+          className={`px-4 py-2 rounded-md ${
+            gridCols === "grid-cols-3"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-700"
+          }`}
+        >
+          3 Columns
+        </button>
+        </div>
+      <div className={`grid ${gridCols}  gap-3 lg:gap-6`}>
         {queries.map((item) => (
       <Zoom>
       <div
@@ -154,6 +187,7 @@ const MyQueries = () => {
       </Zoom>
         ))}
       </div>
+    </div>
     )}
   </div>
     );

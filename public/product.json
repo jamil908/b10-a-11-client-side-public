@@ -1,37 +1,37 @@
 [
-    {
-      "id": 1,
-      "name": "Smartphone",
-      "image": "https://i.ibb.co.com/jywY84j/th-1.jpg",
-      "description": "A high-quality smartphone with advanced features.",
-      "price": 799
-    },
-    {
-      "id": 2,
-      "name": "Laptop",
-      "image":"https://i.ibb.co.com/x7rZyQD/th-5.jpg",
-      "description": "A powerful laptop for professionals and gamers.",
-      "price": 1299
-    },
-    {
-      "id": 3,
-      "name": "Headphones",
-      "image": "https://i.ibb.co.com/sgLYVtH/th-4.jpg",
-      "description": "Noise-cancelling headphones for immersive sound.",
-      "price": 199
-    },
-    {
-      "id": 4,
-      "name": "Air pods ",
-      "image": "https://i.ibb.co.com/gVCmLJz/th-8.jpg",
-      "description": "A stylish smartwatch to keep track of your fitness.",
-      "price": 299
-    },
-    {
-      "id": 5,
-      "name": "Camera",
-      "image": "https://i.ibb.co.com/ZzGLdMn/th.jpg",
-      "description": "Capture moments with this high-resolution camera.",
-      "price": 599
-    }
-  ]
+  {
+    "id": 1,
+    "name": "The Great Gatsby",
+    "image": "https://i.ibb.co.com/9tYZBR9/the-great-gatsby-9781524879761-hr.jpg",
+    "description": "A classic novel by F. Scott Fitzgerald about the American Dream.",
+    "price": 10
+  },
+  {
+    "id": 2,
+    "name": "To Kill a Mockingbird",
+    "image": "https://i.ibb.co.com/j4N19pn/Lee-Harper-To-Kill-A-Mockingbird-14085-3.jpg",
+    "description": "Harper Lee's iconic story of race and justice in the Deep South.",
+    "price": 12
+  },
+  {
+    "id": 3,
+    "name": "1984",
+    "image": "https://i.ibb.co.com/PYKX1gt/51-FXP6-S8w-WS.jpg",
+    "description": "George Orwell's dystopian novel about totalitarianism and surveillance.",
+    "price": 15
+  },
+  {
+    "id": 4,
+    "name": "Pride and Prejudice",
+    "image": "https://i.ibb.co.com/B6JRc07/Pride-Pejudicefirstpeacockedition.jpg",
+    "description": "Jane Austen's timeless romance about love and society.",
+    "price": 9
+  },
+  {
+    "id": 5,
+    "name": "The Catcher in the Rye",
+    "image": "https://i.ibb.co.com/p67rRrW/1918.jpg",
+    "description": "J.D. Salinger's tale of teenage rebellion and angst.",
+    "price": 11
+  }
+]

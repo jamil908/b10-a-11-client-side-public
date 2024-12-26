@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../shared/nav.css";
 import { Link } from "react-router-dom";
+import { Zoom } from "react-awesome-reveal";
 const AllQuery = () => {
   const [queries, setQueries] = useState([]);
 
@@ -28,7 +29,8 @@ const AllQuery = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {recentQuery.map((item) => (
-          <div
+         <Zoom>
+         <div
             key={item._id}
             className="card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
           >
@@ -54,6 +56,7 @@ const AllQuery = () => {
               </div>
             </div>
           </div>
+         </Zoom>
         ))}
       </div>
     </div>

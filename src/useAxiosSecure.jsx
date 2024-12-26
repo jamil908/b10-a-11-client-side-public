@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const axiosInstance = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
-    withCredentials: true, // Allow cookies for authentication
+    withCredentials: true, 
 });
 const useAxiosSecure = () => {
     const {handleLogOut}=useContext(AuthContext)
