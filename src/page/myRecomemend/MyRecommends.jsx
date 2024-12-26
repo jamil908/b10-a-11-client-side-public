@@ -4,10 +4,11 @@ import AuthContext from "../../context/AuthContext";
 import Loading from "../loading/Loading";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../useAxiosSecure";
-
+import '../shared/nav.css'
 const MyRecommends = () => {
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
+  const [gridCols, setGridCols] = useState("grid-cols-1"); 
   const [loading, setLoading] = useState(true); 
   const axiosSecure = useAxiosSecure()
   useEffect(() => {
@@ -68,10 +69,47 @@ const MyRecommends = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 bg-gray-100 bg-d min-h-screen">
       <h2 className="text-2xl font-bold mb-4">My Recommendations</h2>
+
       {recommendations.length > 0 ? (
-        <div className="grid  grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3 ">
+        <>
+        
+      <div className="flex justify-center space-x-4 mb-6">
+      
+       
+      <button
+        onClick={() => setGridCols("grid-cols-1")}
+        className={`px-4 py-2 rounded-md ${
+          gridCols === "grid-cols-1"
+            ? "bg-blue-500 text-white"
+            : "bg-gray-200 text-gray-700"
+        }`}
+      >
+        1 Columns
+      </button>
+      <button
+        onClick={() => setGridCols("grid-cols-2")}
+        className={`px-4 py-2 rounded-md ${
+          gridCols === "grid-cols-2"
+            ? "bg-blue-500 text-white"
+            : "bg-gray-200 text-gray-700"
+        }`}
+      >
+        2 Columns
+      </button>
+      <button
+        onClick={() => setGridCols("grid-cols-3")}
+        className={`px-4 py-2 rounded-md ${
+          gridCols === "grid-cols-3"
+            ? "bg-blue-500 text-white"
+            : "bg-gray-200 text-gray-700"
+        }`}
+      >
+        3 Columns
+      </button>
+    </div>
+        <div className={`grid  ${gridCols} gap-6 `}>
           {recommendations.map((recommendation) => (
             <div key={recommendation._id} className="bg-white  shadow-md rounded-lg p-4">
               <h3 className="text-lg font-bold">{recommendation.recommendTitle}</h3>
@@ -87,8 +125,10 @@ const MyRecommends = () => {
               </p>
               <button onClick={()=>handleDelete(recommendation._id)} className="btn">delete</button>
             </div>
+            
           ))}
         </div>
+        </>
       ) : (
         <p>No recommendations found.</p>
       )}

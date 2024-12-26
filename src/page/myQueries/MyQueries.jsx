@@ -171,7 +171,7 @@ const [gridCols, setGridCols] = useState("grid-cols-1");
         </button>
       </Link>
       <Link to={`/update/${item._id}`}>
-        <button className="btn bg-yellow-400 text-white px-4 py-2 rounded-md hover:bg-yellow-500 transform transition duration-300 hover:scale-105">
+        <button className="btn bg-green-400 text-white px-4 py-2 rounded-md hover:bg-green-600 transform transition duration-300 hover:scale-105">
           Update
         </button>
       </Link>
