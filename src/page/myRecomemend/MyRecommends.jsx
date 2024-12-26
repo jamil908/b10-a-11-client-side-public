@@ -5,6 +5,7 @@ import Loading from "../loading/Loading";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../useAxiosSecure";
 import '../shared/nav.css'
+import { Zoom } from "react-awesome-reveal";
 const MyRecommends = () => {
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
@@ -111,6 +112,7 @@ const MyRecommends = () => {
     </div>
         <div className={`grid  ${gridCols} gap-6 `}>
           {recommendations.map((recommendation) => (
+            <Zoom>
             <div key={recommendation._id} className="bg-white  shadow-md rounded-lg p-4">
               <h3 className="text-lg font-bold">{recommendation.recommendTitle}</h3>
               <p>{recommendation.recommendReason}</p>
@@ -123,8 +125,9 @@ const MyRecommends = () => {
                 <span className="font-semibold">Submitted On:</span>{" "}
                 {new Date(recommendation.timestamp).toLocaleString()}
               </p>
-              <button onClick={()=>handleDelete(recommendation._id)} className="btn">delete</button>
+              <button onClick={()=>handleDelete(recommendation._id)} className="btn bg-red-500 text-white hover:bg-red-700">delete</button>
             </div>
+            </Zoom>
             
           ))}
         </div>
