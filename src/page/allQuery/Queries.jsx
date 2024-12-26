@@ -7,7 +7,7 @@ import { Zoom } from "react-awesome-reveal";
 const Queries = () => {
   const [queries, setQueries] = useState([]); 
   const [searchText, setSearchText] = useState("");
-  const [gridCols, setGridCols] = useState("grid-cols-2"); 
+  const [gridCols, setGridCols] = useState("grid-cols-1"); 
 
   useEffect(() => {
     const fetchQueries = async () => {
@@ -49,6 +49,16 @@ const Queries = () => {
       <div className="flex justify-center space-x-4 mb-6">
       
        
+        <button
+          onClick={() => setGridCols("grid-cols-1")}
+          className={`px-4 py-2 rounded-md ${
+            gridCols === "grid-cols-1"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-700"
+          }`}
+        >
+          1 Columns
+        </button>
         <button
           onClick={() => setGridCols("grid-cols-2")}
           className={`px-4 py-2 rounded-md ${
