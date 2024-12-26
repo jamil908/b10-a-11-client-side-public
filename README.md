@@ -1,4 +1,4 @@
-# Next Step Guide 🏋️‍♂️  
+# Next Step Guide Frontend🏋️‍♂️  
 **Streamline Your Sports Gear Management**  
 
 Welcome to **Next Step Guide**, a dynamic platform designed to make managing sports equipment effortless. With robust features like querying, recommendations, secure authentication, and a responsive design, this application simplifies inventory management and enhances user interaction.
