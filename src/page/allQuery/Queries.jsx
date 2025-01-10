@@ -29,21 +29,23 @@ const Queries = () => {
   const filteredQueries = queries.filter((item) =>
     item.productName.toLowerCase().includes(searchText.toLowerCase())
   );
+  console.log(filteredQueries)
 
   return (
     <div className="min-h-[calc(100vh-120px)] bg-d px-6 py-8">
-      <h1 className="text-3xl font-bold text-center text-blue-500 mb-8">
+      <h1 className="text-3xl font-bold text-center text-blue-500 mb-2">
         All Queries
       </h1>
 
-      <div className="mb-6 text-center">
+      <div className="mb-3 text-center items-center   mx-auto  ">
         <input
           type="text"
           placeholder="Search by Product Name"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          className="border border-gray-300 rounded-lg px-4 py-2 w-1/2"
+          className="border border-gray-300 rounded-lg px-4 py-2  "
         />
+      
       </div>
 
       <div className="flex justify-center space-x-4 mb-6">

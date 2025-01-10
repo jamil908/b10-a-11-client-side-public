@@ -10,17 +10,17 @@ const NavBar = () => {
 
   const links = (
     <>
-      <NavLink className="btn text-lg font-semibold hover:text-blue-600" to="/">
+      <NavLink className=" text-lg font-semibold text-blue-200" to="/">
         Home
       </NavLink>
-      <NavLink className="btn text-lg font-semibold hover:text-blue-600" to="/queries">
+      <NavLink className="text-lg font-semibold text-blue-200" to="/queries">
         Queries
       </NavLink>
     </>
   );
 
   return (
-    <div className="bg-gradient-to-r bg-n shadow-lg">
+    <div className="bg-gradient-to-r sticky top-0 z-40 bg-n shadow-lg">
       <div className="navbar container mx-auto px-5 py-4 flex items-center justify-between">
         {/* Logo */}
         <img src={logo}
@@ -37,13 +37,13 @@ const NavBar = () => {
           {links}
           {user && user?.email && (
             <>
-            <NavLink className="btn text-lg font-semibold hover:text-blue-200" to="/recommendsForMe">
+            <NavLink className=" text-lg font-semibold text-blue-200" to="/recommendsForMe">
                 Recommend For Me
               </NavLink>
-              <NavLink className="btn text-lg font-semibold hover:text-blue-200" to="/myQueries">
+              <NavLink className=" text-lg font-semibold text-blue-200" to="/myQueries">
                 My Queries
               </NavLink>
-              <NavLink className="btn text-lg font-semibold hover:text-blue-200" to="/my-recommends">
+              <NavLink className=" text-lg font-semibold text-blue-200" to="/my-recommends">
                 My Recommends
               </NavLink>
      
