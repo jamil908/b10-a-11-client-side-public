@@ -1,13 +1,15 @@
 import React from 'react';
-import { Fade, Slide } from 'react-awesome-reveal';
+import { Fade,  } from 'react-awesome-reveal';
+import { FaPhone, FaPhoneAlt, FaVoicemail } from 'react-icons/fa';
+import { MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
 
 const Promote = () => {
     return (
         <div>
             
-      <section className="container mx-auto px-6">
+      <section className="container mx-auto ">
         <Fade triggerOnce>
-          <div className="bg-white shadow-lg rounded-lg p-6">
+          <div className=" shadow-lg rounded-lg p-6">
             <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">
               Contact Us
             </h2>
@@ -19,17 +21,17 @@ const Promote = () => {
               {/* Contact Info */}
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-xl font-bold text-gray-800">Email</h4>
-                  <p className="text-gray-600">support@example.com</p>
+                <span className='flex items-center text-center gap-2'><MdOutlineEmail></MdOutlineEmail><h4 className="text-xl font-bold text-gray-800">Address</h4></span>
+                  <p className="text-gray-600">jamilhossainrafi@example.com</p>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-800">Phone</h4>
-                  <p className="text-gray-600">+123 456 7890</p>
+                <span className='flex items-center text-center gap-2'><FaPhoneAlt></FaPhoneAlt><h4 className="text-xl font-bold text-gray-800">Phone</h4></span>
+                  <p className="text-gray-600">+8801781142856</p>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-gray-800">Address</h4>
+                <span className='flex items-center text-center gap-2'><MdOutlineLocationOn /><h4 className="text-xl font-bold text-gray-800">Address</h4></span>
                   <p className="text-gray-600">
-                    123 Main Street, City, Country
+                    gulbag 125-b, Chittagong, Bangladesh
                   </p>
                 </div>
               </div>

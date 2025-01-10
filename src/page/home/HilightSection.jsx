@@ -3,10 +3,10 @@ import { Zoom } from "react-awesome-reveal";
 import '../shared/nav.css'
 const HighlightSection = () => {
   return (
-    <div className="py-12 px-6 bg-e bg-gray-50 ">
+    <div className=" px-6 bg-e bg-gray-50 ">
       <Zoom cascade>
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-300 mb-4">Our Highlights</h2>
+        <div className="text-center mb-6">
+          <h2 className="text-4xl font-bold text-gray-300 mb-2">Our Highlights</h2>
           <p className="text-lg text-gray-400">
             Discover what makes us stand out from the rest.
           </p>

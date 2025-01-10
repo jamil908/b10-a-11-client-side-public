@@ -10,12 +10,19 @@ const NavBar = () => {
 
   const links = (
     <>
-      <NavLink className=" text-lg font-semibold text-blue-200" to="/">
-        Home
-      </NavLink>
+
+<div className="dropdown dropdown-bottom">
+  <div tabIndex={0} role="button" className=" text-blue-200 m-1">more</div>
+  <ul tabIndex={0} className="dropdown-content menu bg-g rounded-box z-[1] w-52 p-2 shadow">
+    <li><NavLink className=" text-lg font-semibold text-blue-200" to="/">Home</NavLink></li>
+    <li> <NavLink className="text-lg font-semibold text-blue-200" to="/contact"> Contact</NavLink></li>
+  </ul>
+</div>
+
       <NavLink className="text-lg font-semibold text-blue-200" to="/queries">
         Queries
       </NavLink>
+     
     </>
   );
 
@@ -46,6 +53,8 @@ const NavBar = () => {
               <NavLink className=" text-lg font-semibold text-blue-200" to="/my-recommends">
                 My Recommends
               </NavLink>
+              
+      
      
             </>
           )}

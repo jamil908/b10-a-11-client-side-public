@@ -3,10 +3,10 @@ import { Fade } from "react-awesome-reveal";
 import '../shared/nav.css'
 const ExtraSection = () => {
   return (
-    <div className="p-6 bg-f text-white ">
+    <div className="px-6 bg-f text-white ">
       <Fade cascade>
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose Us?</h2>
+        <div className="text-center mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-1">Why Choose Us?</h2>
           <p className="text-lg md:text-xl">
             Discover the unique benefits and insights we bring to you.
           </p>
