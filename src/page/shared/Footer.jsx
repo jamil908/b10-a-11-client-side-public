@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className="relative ">
       {/* Foreground Content */}
-      <footer className="relative z-10 bg-transparent text-white py-10 px-5 md:px-20">
+      <footer className="relative z-10  text-white py-10 px-5 md:px-20">
         {/* Logo and Project Name */}
         <div className="flex items-center w-fit mx-auto mb-8">
           <img src={logo} alt="Next Step Guide Logo" className="w-16 h-16 mr-4" />

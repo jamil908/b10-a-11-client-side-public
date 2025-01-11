@@ -92,7 +92,7 @@ const QueryDetails = () => {
   return (
     <>
  <div className="">
- <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 ">
+ <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6  ">
       <div className="bg-white h-fit shadow-md rounded-lg p-4">
         <img
           src={query.productImage}
