@@ -8,7 +8,7 @@ import Offer from './Offer';
 import Promote from './Promote';
 const Home = () => {
     return (
-        <div className='bg-c'>
+        <div className=''>
             
             <Slider></Slider>
             <AllQuery></AllQuery>

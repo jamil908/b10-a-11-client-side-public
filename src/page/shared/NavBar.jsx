@@ -3,38 +3,48 @@ import { Link, NavLink } from 'react-router-dom';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import './nav.css';
 import AuthContext from '../../context/AuthContext';
-import '../shared/nav.css'
-import logo from '/public/mextsteplogo.webp'
+import '../shared/nav.css';
+import logo from '/public/mextsteplogo.webp';
+
 const NavBar = () => {
   const { user, handleLogOut } = useContext(AuthContext);
 
   const links = (
     <>
+      <div className="dropdown dropdown-bottom">
+        <div tabIndex={0} role="button" className="text-white m-1">
+          More
+        </div>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu bg-g rounded-box z-[1] w-52 p-2 shadow"
+        >
+          <li>
+            <NavLink className="text-lg font-semibold text-white" to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="text-lg font-semibold text-white" to="/contact">
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+      </div>
 
-<div className="dropdown dropdown-bottom">
-  <div tabIndex={0} role="button" className=" text-blue-200 m-1">more</div>
-  <ul tabIndex={0} className="dropdown-content menu bg-g rounded-box z-[1] w-52 p-2 shadow">
-    <li><NavLink className=" text-lg font-semibold text-blue-200" to="/">Home</NavLink></li>
-    <li> <NavLink className="text-lg font-semibold text-blue-200" to="/contact"> Contact</NavLink></li>
-  </ul>
-</div>
-
-      <NavLink className="text-lg font-semibold text-blue-200" to="/queries">
+      <NavLink className="text-lg font-semibold text-white" to="/queries">
         Queries
       </NavLink>
-     
     </>
   );
 
   return (
-    <div className="bg-gradient-to-r sticky top-0 z-40 bg-n shadow-lg">
+    <div className="bg-transparent backdrop-blur-lg sticky top-0 z-40 shadow-lg">
       <div className="navbar container mx-auto px-5 py-4 flex items-center justify-between">
         {/* Logo */}
-        <img src={logo}
-          className='w-10 h-10 rounded-full'
-        />
+        <img src={logo} className="w-10 h-10 rounded-full" />
         <div className="flex items-center">
-          <a className=" lg:text-3xl  md:text-2xl sm:text-xl font-extrabold text-white tracking-wide">
+          <a className="lg:text-3xl md:text-2xl sm:text-xl font-extrabold text-cyan-500 tracking-wide">
             Next-Step-Guide
           </a>
         </div>
@@ -44,29 +54,32 @@ const NavBar = () => {
           {links}
           {user && user?.email && (
             <>
-            <NavLink className=" text-lg font-semibold text-blue-200" to="/recommendsForMe">
+              <NavLink
+                className="text-lg font-semibold text-white hover:text-cyan-400"
+                to="/recommendsForMe"
+              >
                 Recommend For Me
               </NavLink>
-              <NavLink className=" text-lg font-semibold text-blue-200" to="/myQueries">
+              <NavLink
+                className="text-lg font-semibold text-white hover:text-cyan-400"
+                to="/myQueries"
+              >
                 My Queries
               </NavLink>
-              <NavLink className=" text-lg font-semibold text-blue-200" to="/my-recommends">
+              <NavLink
+                className="text-lg font-semibold text-white hover:text-cyan-400"
+                to="/my-recommends"
+              >
                 My Recommends
               </NavLink>
-              
-      
-     
             </>
           )}
         </div>
-
-       
 
         {/* User Avatar and Login/Logout */}
         <div className="flex items-center pl-7">
           {user && user?.email && (
             <div className="flex items-center">
-             
               <img
                 data-tooltip-id="user-tooltip"
                 data-tooltip-content={user.displayName}
@@ -92,23 +105,22 @@ const NavBar = () => {
               </button>
             ) : (
               <>
-                <div className='flex'>
-                <div>
-                <Link to="/login">
-                  <button className="hidden lg:block bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-400 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:scale-105 transform transition duration-300">
-                    Login
-                  </button>
-                </Link>
+                <div className="flex">
+                  <div>
+                    <Link to="/login">
+                      <button className="hidden lg:block bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-400 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:scale-105 transform transition duration-300">
+                        Login
+                      </button>
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/register">
+                      <button className="hidden lg:block bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-600 hover:to-blue-400 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:scale-105 transform transition duration-300">
+                        Register
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-                <div>
-                  <Link to="/register">
-                  <button className="hidden lg:block bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-600 hover:to-blue-400 text-white px-5 py-2 rounded-full font-semibold shadow-md hover:scale-105 transform transition duration-300">
-                    Register
-                  </button>
-                </Link>
-                </div>
-                </div>
-                
               </>
             )}
           </div>
@@ -117,7 +129,11 @@ const NavBar = () => {
         {/* Mobile Menu Dropdown */}
         <div className="lg:hidden flex items-start">
           <div className="dropdown dropdown-left">
-            <div tabIndex={0} role="button" className="btn btn-ghost text-white">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost text-white"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -140,13 +156,22 @@ const NavBar = () => {
               {links}
               {user && user?.email ? (
                 <>
-                  <NavLink className="btn block px-4 py-2 hover:bg-blue-200" to="/myQueries">
+                  <NavLink
+                    className="btn block px-4 py-2 text-white"
+                    to="/myQueries"
+                  >
                     My Queries
                   </NavLink>
-                  <NavLink className="btn block px-4 py-2 hover:bg-blue-200" to="/my-recommends">
+                  <NavLink
+                    className="btn block px-4 py-2 text-white"
+                    to="/my-recommends"
+                  >
                     My Recommends
                   </NavLink>
-                  <NavLink className="btn block px-4 py-2 hover:bg-blue-200" to="/recommendsForMe">
+                  <NavLink
+                    className="btn block px-4 py-2 text-white"
+                    to="/recommendsForMe"
+                  >
                     Recommend For Me
                   </NavLink>
                   <button

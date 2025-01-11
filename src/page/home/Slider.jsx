@@ -21,7 +21,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="p-5 bg-d  bg-gradient-to-b from-blue-50 via-white to-blue-50">
+    <div className="p-5 s  bg-gradient-to-b from-blue-50 via-white to-blue-50">
       {/* <h2 className="text-4xl font-extrabold text-center mb-3 text-cyan-500">
         Recommended Products
       </h2>

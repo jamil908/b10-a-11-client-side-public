@@ -2,35 +2,35 @@ import React from 'react';
 import { Fade,  } from 'react-awesome-reveal';
 import { FaPhone, FaPhoneAlt, FaVoicemail } from 'react-icons/fa';
 import { MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
-
+import  '../shared/nav.css'
 const Promote = () => {
     return (
         <div>
             
-      <section className="container mx-auto ">
+      <section className="container  mx-auto ">
         <Fade triggerOnce>
           <div className=" shadow-lg rounded-lg p-6">
             <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">
               Contact Us
             </h2>
-            <p className="text-center text-gray-600 mb-6">
+            <p className="text-center text-gray-200 mb-6">
               Have questions or need help? Reach out to us, and we’ll get back
               to you as soon as possible.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1  md:w-3/5 text-white  rounded-lg mx-auto md:grid-cols-2 gap-8">
               {/* Contact Info */}
               <div className="space-y-4">
                 <div>
-                <span className='flex items-center text-center gap-2'><MdOutlineEmail></MdOutlineEmail><h4 className="text-xl font-bold text-gray-800">Address</h4></span>
-                  <p className="text-gray-600">jamilhossainrafi@example.com</p>
+                <span className='flex items-center text-center gap-2'><MdOutlineEmail className=' text-cyan-500'></MdOutlineEmail><h4 className="text-xl font-bold ">Address</h4></span>
+                  <p className="">jamilhossainrafi@example.com</p>
                 </div>
                 <div>
-                <span className='flex items-center text-center gap-2'><FaPhoneAlt></FaPhoneAlt><h4 className="text-xl font-bold text-gray-800">Phone</h4></span>
-                  <p className="text-gray-600">+8801781142856</p>
+                <span className='flex items-center text-center gap-2'><FaPhoneAlt className=' text-cyan-500'></FaPhoneAlt><h4 className="text-xl font-bold ">Phone</h4></span>
+                  <p className="">+8801781142856</p>
                 </div>
                 <div>
-                <span className='flex items-center text-center gap-2'><MdOutlineLocationOn /><h4 className="text-xl font-bold text-gray-800">Address</h4></span>
-                  <p className="text-gray-600">
+                <span className='flex items-center text-center gap-2'><MdOutlineLocationOn className=' text-cyan-500' /><h4 className="text-xl font-bold text-white">Address</h4></span>
+                  <p className="">
                     gulbag 125-b, Chittagong, Bangladesh
                   </p>
                 </div>

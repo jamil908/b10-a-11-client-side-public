@@ -8,7 +8,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaWhatsapp, FaLinkedin
 
 const Footer = () => {
   return (
-    <div className="relative bg-g">
+    <div className="relative ">
       {/* Foreground Content */}
       <footer className="relative z-10 bg-transparent text-white py-10 px-5 md:px-20">
         {/* Logo and Project Name */}
@@ -42,28 +42,28 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <div className="flex items-center mb-2">
-              <FaEnvelope className="text-blue-300 mr-2" />
+              <FaEnvelope className="text-cyan-500 mr-2" />
               <p className="text-sm text-gray-200">
                 Email: <Link to="/contact" className="hover:text-blue-300 transition-colors">info@example.com</Link>
               </p>
             </div>
             <div className="flex items-center mb-2">
-              <FaPhone className="text-blue-300 mr-2" />
+              <FaPhone className="text-cyan-500 mr-2" />
               <p className="text-sm text-gray-200">
                 Phone: <Link to="/contact" className="hover:text-blue-300 transition-colors">+123 456 789</Link>
               </p>
             </div>
             <div className="flex items-center">
-              <FaMapMarkerAlt className="text-blue-300 mr-2" />
+              <FaMapMarkerAlt className="text-cyan-500 mr-2" />
               <p className="text-sm text-gray-200">
                 Location: 123 Main Street, Anywhere
               </p>
             </div>
             <div className="flex gap-3 mt-3">
-         <div><FaFacebook></FaFacebook></div>
-          <div><FaWhatsapp></FaWhatsapp></div>
-          <div><FaLinkedin></FaLinkedin></div>
-          <div><FaTwitter></FaTwitter></div>
+          <div><FaTwitter  className=" text-cyan-500"></FaTwitter></div>
+         <div><FaFacebook  className=" text-cyan-500"></FaFacebook></div>
+          <div><FaWhatsapp className=" text-cyan-500"></FaWhatsapp></div>
+          <div><FaLinkedin className=" text-cyan-500"></FaLinkedin></div>
          </div>
           </div>
          

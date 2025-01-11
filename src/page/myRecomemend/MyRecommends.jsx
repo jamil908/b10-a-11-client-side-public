@@ -70,7 +70,7 @@ const MyRecommends = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100 bg-d min-h-screen">
+    <div className="p-6 bg-gray-100  min-h-screen">
       <h2 className="text-2xl font-bold mb-4 text-gray-100">My Recommendations</h2>
 
       {recommendations.length > 0 ? (
