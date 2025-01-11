@@ -29,6 +29,9 @@ const NavBar = () => {
               Contact
             </NavLink>
           </li>
+          <li><NavLink className="text-lg font-semibold text-white" to="/highlight">
+            Highlight
+            </NavLink></li>
         </ul>
       </div>
 
@@ -153,23 +156,36 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-50 bg-white text-gray-800 rounded-box shadow-lg w-52"
             >
-              {links}
+                 <li>
+            <NavLink className="text-lg font-semibold text-black" to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="text-lg font-semibold text-black" to="/contact">
+              Contact
+            </NavLink>
+        
+          </li>
+          <li><NavLink className="text-lg font-semibold text-black" to="/highlight">
+            Highlight
+            </NavLink></li>
               {user && user?.email ? (
                 <>
                   <NavLink
-                    className="btn block px-4 py-2 text-white"
+                    className="btn block px-4 py-2 text-black"
                     to="/myQueries"
                   >
                     My Queries
                   </NavLink>
                   <NavLink
-                    className="btn block px-4 py-2 text-white"
+                    className="btn block px-4 py-2 text-black"
                     to="/my-recommends"
                   >
                     My Recommends
                   </NavLink>
                   <NavLink
-                    className="btn block px-4 py-2 text-white"
+                    className="btn block px-4 py-2 text-black"
                     to="/recommendsForMe"
                   >
                     Recommend For Me

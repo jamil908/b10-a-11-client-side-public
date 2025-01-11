@@ -16,6 +16,7 @@ import Queries from "../page/allQuery/Queries";
 import MyRecommends from "../page/myRecomemend/MyRecommends";
 import RecommendsForMe from "../page/recommendsForMe/RecommendsForMe";
 import Promote from "../page/home/Promote";
+import HighlightSection from "../page/home/HilightSection";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -41,6 +42,10 @@ import Promote from "../page/home/Promote";
         {
           path:'/contact',
           element:<Promote></Promote>,
+        },
+        {
+          path:'/highlight',
+          element:<HighlightSection></HighlightSection>
         },
         {
           path:'/myQueries',
