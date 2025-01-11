@@ -9,7 +9,7 @@ body h2, h1{
 }
 
 #root {
-    width: fit-content ;
+    max-width: 1400px;
     margin-right: auto;
     margin-left: auto;
     background: rgb(27,13,77) !important;
