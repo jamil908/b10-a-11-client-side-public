@@ -23,7 +23,7 @@ const AllQuery = () => {
   const recentQuery = queries.slice(0, 6);
   console.log(recentQuery);
   return (
-    <div className="container mx-auto  px-4 py-6">
+    <div className=" mx-auto   py-6">
       <h2 className="text-3xl font-bold text-center mb-6 text-white">
         Recent Queries
       </h2>

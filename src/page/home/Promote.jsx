@@ -7,7 +7,7 @@ const Promote = () => {
     return (
         <div>
             
-      <section className="container  mx-auto ">
+      <section className="  mx-auto ">
         <Fade triggerOnce>
           <div className=" shadow-lg rounded-lg p-6">
             <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">
@@ -55,7 +55,7 @@ const Promote = () => {
                 ></textarea>
                 <button
                   type="submit"
-                  className="w-full px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-all duration-300"
+                  className="w-full px-2 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-all duration-300"
                 >
                   Send Message
                 </button>

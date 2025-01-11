@@ -32,7 +32,7 @@ const Queries = () => {
   console.log(filteredQueries)
 
   return (
-    <div className="min-h-[calc(100vh-120px)]  px-6 py-8">
+    <div className="min-h-[calc(100vh-120px)]   py-8">
       <h1 className="text-3xl font-bold text-center text-blue-500 mb-2">
         All Queries
       </h1>

@@ -9,7 +9,7 @@ import { Zoom } from "react-awesome-reveal";
 const MyRecommends = () => {
   const { user } = useContext(AuthContext);
   const [recommendations, setRecommendations] = useState([]);
-  const [gridCols, setGridCols] = useState("grid-cols-1"); 
+  const [gridCols, setGridCols] = useState("grid-cols-3"); 
   const [loading, setLoading] = useState(true); 
   const axiosSecure = useAxiosSecure()
   useEffect(() => {
@@ -70,8 +70,8 @@ const MyRecommends = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-100  min-h-screen">
-      <h2 className="text-2xl font-bold mb-4 text-gray-100">My Recommendations</h2>
+    <div className="p-6  min-h-screen">
+      <h2 className="text-2xl font-bold mb-4 text-cyan-500 w-fit mx-auto">My Recommendations</h2>
 
       {recommendations.length > 0 ? (
         <>

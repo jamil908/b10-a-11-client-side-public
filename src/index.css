@@ -9,6 +9,9 @@ body h2, h1{
 }
 
 #root {
+    width: fit-content ;
+    margin-right: auto;
+    margin-left: auto;
     background: rgb(27,13,77) !important;
     background: linear-gradient(180deg, rgba(27,13,77,1) 19%, rgba(18,46,77,1) 64%, rgba(21,94,111,1) 92%) !important;
 }

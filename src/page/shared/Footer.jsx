@@ -32,8 +32,8 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="hover:text-blue-300 transition-colors">Home</Link></li>
-              <li><Link to="/products" className="hover:text-blue-300 transition-colors">Products</Link></li>
-              <li><Link to="/services" className="hover:text-blue-300 transition-colors">Services</Link></li>
+              <li><Link to="/" className="hover:text-blue-300 transition-colors">Products</Link></li>
+              <li><Link to="/" className="hover:text-blue-300 transition-colors">Services</Link></li>
               <li><Link to="/contact" className="hover:text-blue-300 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
@@ -44,13 +44,13 @@ const Footer = () => {
             <div className="flex items-center mb-2">
               <FaEnvelope className="text-cyan-500 mr-2" />
               <p className="text-sm text-gray-200">
-                Email: <Link to="/contact" className="hover:text-blue-300 transition-colors">info@example.com</Link>
+                Email: <Link to="/contact" className="hover:text-blue-300 transition-colors">jamilhossainrafi@gmail.com</Link>
               </p>
             </div>
             <div className="flex items-center mb-2">
-              <FaPhone className="text-cyan-500 mr-2" />
+              <FaWhatsapp className="text-cyan-500 mr-2" />
               <p className="text-sm text-gray-200">
-                Phone: <Link to="/contact" className="hover:text-blue-300 transition-colors">+123 456 789</Link>
+                Phone: <Link to="/contact" className="hover:text-blue-300 transition-colors">+8801781142856</Link>
               </p>
             </div>
             <div className="flex items-center">

@@ -3,7 +3,7 @@ import React from "react";
 const Offer = () => {
   return (
     <section className=" py-12">
-      <div className="container mx-auto px-6">
+      <div className=" mx-auto ">
         <h2 className="text-3xl font-bold text-center text-cyan-500 mb-8">
           Stay Updated with Our Highlights
         </h2>

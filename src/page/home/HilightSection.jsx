@@ -3,7 +3,7 @@ import { Zoom } from "react-awesome-reveal";
 import '../shared/nav.css'
 const HighlightSection = () => {
   return (
-    <div className=" px-6   ">
+    <div className="  ">
       <Zoom cascade>
         <div className="text-center mb-6">
           <h2 className="text-4xl font-bold text-gray-300 mb-2">Our Highlights</h2>
