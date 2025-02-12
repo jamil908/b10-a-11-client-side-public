@@ -10,7 +10,8 @@ body h2, h1{
 
 #root {
     max-width: 1400px;
-    margin-right: auto;
+    margin-right: auto !important;
+    margin-left: auto !important;
     background-color: black !important;
     /* margin-left: auto;
     background: rgb(27,13,77) !important;
