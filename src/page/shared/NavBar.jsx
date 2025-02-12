@@ -47,7 +47,7 @@ const NavBar = () => {
         {/* Logo */}
         <img src={logo} className="w-10 h-10 rounded-full" />
         <div className="flex items-center">
-          <a className="lg:text-3xl md:text-2xl sm:text-xl font-extrabold text-cyan-500 tracking-wide">
+          <a className="lg:text-3xl text-sky-500 md:text-2xl sm:text-xl font-extrabold  tracking-wide">
             Next-Step-Guide
           </a>
         </div>

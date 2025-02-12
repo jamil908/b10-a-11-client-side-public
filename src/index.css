@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 body h2, h1{
-    color: rgb(51, 189, 219) !important;
+    color: #E5E7EB !important;
 }
 .swiperSlide {
  height: 250px;
@@ -10,6 +10,7 @@ body h2, h1{
 
 #root {
     max-width: 1400px;
+
     margin-right: auto !important;
     margin-left: auto !important;
     background-color: black !important;

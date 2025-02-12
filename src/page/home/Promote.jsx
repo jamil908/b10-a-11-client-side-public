@@ -55,7 +55,7 @@ const Promote = () => {
                 ></textarea>
                 <button
                   type="submit"
-                  className="w-full px-2 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-all duration-300"
+                  className="px-5 py-2 border-2 border-sky-400 text-white font-semibold rounded-lg shadow-md transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-blue-500/50"
                 >
                   Send Message
                 </button>
