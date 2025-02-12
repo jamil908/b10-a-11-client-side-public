@@ -107,30 +107,39 @@ const Queries = () => {
       <div className={`grid ${gridCols} gap-8`}>
         {filteredQueries.map((item) => (
           <Zoom key={item._id}>
-          <div className="bg-gradient-to-b from-white to-gray-100 shadow-lg rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-  <div className="overflow-hidden">
+          <div className="bg-gradient-to-b  from-gray-800 to-gray-900 shadow-lg rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.03] group">
+  {/* Image with Hover Effect */}
+  <div className="relative overflow-hidden">
     <img
       src={item.productImage || "https://via.placeholder.com/300"}
       alt={item.productName}
-      className="w-full h-56 object-cover rounded-t-2xl transition-transform duration-300 hover:scale-105"
+      className="w-full h-56 object-cover rounded-t-2xl transition-transform duration-300 group-hover:scale-105"
     />
   </div>
+
+  {/* Card Content */}
   <div className="p-5 flex flex-col gap-3">
-    <h2 className="text-lg font-bold text-gray-900 truncate">{item.productName}</h2>
-    <p className="text-gray-700 text-sm truncate">{item.queryTitle}</p>
-    <p className="text-gray-800 font-medium">
-      Recommendations: <span className="text-blue-600 font-semibold">{item.recommendationCount}</span>
+    <h2 className="text-lg font-bold text-gray-100 truncate">
+      {item.productName}
+    </h2>
+    <p className="text-gray-200 text-sm truncate">{item.queryTitle}</p>
+    <p className="text-gray-200 font-medium">
+      Recommendations:{" "}
+      <span className="text-blue-600 font-semibold">
+        {item.recommendationCount}
+      </span>
     </p>
+
+    {/* Button */}
     <div className="flex justify-center">
       <Link to={`/queryDetails/${item._id}`}>
-        <button className="px-5 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-lg">
+        <button className="px-5 py-2 border-2 border-sky-400 text-white font-semibold rounded-lg shadow-md transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-blue-500/50">
           Recommend
         </button>
       </Link>
     </div>
   </div>
 </div>
-
 
           </Zoom>
         ))}
