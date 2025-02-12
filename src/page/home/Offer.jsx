@@ -55,13 +55,13 @@ const Offer = () => {
         </div>
 
         {/* Promotional Banner */}
-        <div className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-12 rounded-lg text-center">
+        <div className=" text-white py-12 rounded-lg text-center">
           <h3 className="text-2xl font-bold mb-4">Exclusive Promotion</h3>
           <p className="text-lg mb-6">
             Unlock special deals and early access to our new collections by
             joining our community today.
           </p>
-          <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-md hover:bg-gray-100 transition-all duration-300">
+          <button className="px-5 py-2 border-2 border-sky-400 text-white font-semibold rounded-lg shadow-md transition-all duration-300 hover:bg-blue-700 hover:scale-105 hover:shadow-blue-500/50">
             Join Now
           </button>
         </div>

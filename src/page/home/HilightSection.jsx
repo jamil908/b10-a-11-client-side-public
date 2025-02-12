@@ -14,10 +14,10 @@ const HighlightSection = () => {
       </Zoom>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <Zoom>
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+          <div className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Innovative Solutions</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-400 mb-3">Innovative Solutions</h3>
+              <p className="text-gray-300">
                 We bring cutting-edge solutions to solve your toughest challenges.
               </p>
             </div>
@@ -25,10 +25,10 @@ const HighlightSection = () => {
           </div>
         </Zoom>
         <Zoom delay={100}>
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+          <div className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Personalized Experience</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-400 mb-3">Personalized Experience</h3>
+              <p className="text-gray-300">
                 Tailored recommendations designed exclusively for your needs.
               </p>
             </div>
@@ -36,10 +36,10 @@ const HighlightSection = () => {
           </div>
         </Zoom>
         <Zoom delay={200}>
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+          <div className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Seamless Integration</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-400 mb-3">Seamless Integration</h3>
+              <p className="text-gray-300">
                 Effortlessly integrate our tools into your existing workflow.
               </p>
             </div>
@@ -47,10 +47,10 @@ const HighlightSection = () => {
           </div>
         </Zoom>
         <Zoom delay={300}>
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+          <div className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Scalable Design</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-400 mb-3">Scalable Design</h3>
+              <p className="text-gray-300">
                 Our solutions grow with you, ensuring lasting value.
               </p>
             </div>
@@ -58,10 +58,10 @@ const HighlightSection = () => {
           </div>
         </Zoom>
         <Zoom delay={400}>
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+          <div className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Expert Support</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-400 mb-3">Expert Support</h3>
+              <p className="text-gray-300">
                 Our team is here to guide you every step of the way.
               </p>
             </div>
@@ -69,10 +69,10 @@ const HighlightSection = () => {
           </div>
         </Zoom>
         <Zoom delay={500}>
-          <div className="relative bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
+          <div className="relative bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
             <div className="p-6">
-              <h3 className="text-xl font-bold text-gray-800 mb-3">Proven Results</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-gray-400 mb-3">Proven Results</h3>
+              <p className="text-gray-300">
                 Trusted by clients worldwide for measurable success.
               </p>
             </div>

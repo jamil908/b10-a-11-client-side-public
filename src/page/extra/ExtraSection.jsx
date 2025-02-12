@@ -6,7 +6,7 @@ const ExtraSection = () => {
     <div className="  text-white ">
       <Fade cascade>
         <div className="text-center mb-4">
-          <h2 className="text-3xl md:text-5xl font-bold mb-1">Why Choose Us?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-1">Why Choose Us?</h2>
           <p className="text-lg md:text-xl">
             Discover the unique benefits and insights we bring to you.
           </p>

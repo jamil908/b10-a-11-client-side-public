@@ -10,7 +10,7 @@ const Promote = () => {
       <section className="  mx-auto ">
         <Fade triggerOnce>
           <div className="  rounded-lg p-6">
-            <h2 className="text-3xl font-bold text-center text-blue-600 mb-6">
+            <h2 className="text-3xl font-bold text-center  mb-6">
               Contact Us
             </h2>
             <p className="text-center text-gray-200 mb-6">
